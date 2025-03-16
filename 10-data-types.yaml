@@ -1,0 +1,27 @@
+- name: checking data types
+  hosts: loacalhost
+  vars:
+  NAME: sivakumar
+  skills:
+    -aws
+    -DevOps
+    -sql
+    -python
+  Experience: 10
+    DevOps:4
+    aws:3
+    sql:2
+  Trainer: true
+  tasks:
+    - name: print key value pair
+      ansible.builtin.debug:
+        msg: "name is: {{NAME}}"
+    - name: print list
+      ansible.builtin.debug:
+       msg: "list is:{{skills}}" 
+    - name: print map
+      ansible.builtin.debug:
+        msg: "experience is: {{Experience}}"  
+    - name: print boolean
+      ansible.builtin.debug:
+        msg:"is he trainer: {{Trainer}}"
